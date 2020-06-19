@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import './assets/scss/font.scss';
+
+* {
+    font-family: 'Open_Sans';
+}
+
+html, body {
+    background-color: #251155;
+    color: #fff;
+    outline: none;
+    margin: 0;
+    padding: 0;
+}

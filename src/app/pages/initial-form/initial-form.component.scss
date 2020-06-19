@@ -1,0 +1,117 @@
+.frescura {
+    position: fixed;
+    right: 0;
+    opacity: .1;
+    transform: translateY(0px);
+    animation: corona 5s ease-in-out infinite;
+}
+.frescura2 {
+    position: fixed;
+    left: 30%;
+    bottom: -20px;
+    opacity: .1;
+    transform: translateY(0px);
+    animation: corona 10s ease-in-out infinite;
+
+    img {
+        width: 200px;
+    }
+}
+
+@keyframes corona {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.initial-form {
+    padding: 10px 50px;
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+
+    .top {
+        margin-bottom: 30px;
+
+        .title {
+            font-size: 40px;
+            font-weight: 600;
+        }
+        
+        .subtitle {
+            font-size: 15px;
+            font-weight: 500;
+        }
+    }
+
+    .form {
+        .campo {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 15px;
+            width: 50%;
+            background-color: #2C1661;
+
+            .question {
+                font-size: 15px;
+                margin-bottom: 10px;
+            }
+
+            .answer {
+                overflow: auto;
+                
+                .radio {
+                    margin-right: 20px;
+                    float: left;
+                    color: #AAAAAA;
+                    font-size: 15px;
+
+                    input {
+                        display: none;
+                    }
+
+                    label {
+                        cursor: pointer;
+                    }
+                }
+
+                .radio input:checked + label {
+                    font-weight: 600;
+                    color: #fff;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    .acoes {
+        margin-top: 20px;
+        
+        button {
+            padding: 15px 35px;
+            background-color: #fff;
+            border: none;
+            color: #251155;
+            font-size: 15px;
+            border-radius: 100px;
+            font-weight: 600;
+            cursor: pointer;
+
+            &:disabled {
+                opacity: .3;
+                cursor: not-allowed;
+            }
+        }
+
+        a {
+            display: block;
+            margin-top: 10px;
+        }
+    }
+}

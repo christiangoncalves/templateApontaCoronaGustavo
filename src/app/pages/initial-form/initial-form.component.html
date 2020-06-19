@@ -1,0 +1,90 @@
+<div class="frescura">
+    <img src="/assets/imgs/virus.svg" alt="">
+</div>
+<div class="frescura2">
+    <img src="/assets/imgs/virus.svg" alt="">
+</div>
+<div class="initial-form">
+    <div class="top">
+        <div class="title">
+            Bem vindo ao Aponta Corona
+        </div>
+        <div class="subtitle">
+            Preenchendo os dados você ajuda a combater o vírus
+        </div>
+    </div>
+    <div class="form">
+        <form [formGroup]="form" action="">
+            <div class="campo">
+                <div class="question">Você foi infectado pelo COVID-19?</div>
+                <div class="answer">
+                    <div class="radio">
+                        <input type="radio" id="infectado1" formControlName="infectado" value="0">
+                        <label for="infectado1">Não</label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" id="infectado2" formControlName="infectado" value="5">
+                        <label for="infectado2">Sim</label>
+                    </div>
+                </div>
+            </div>
+            <div class="campo">
+                <div class="question">Quantas vezes por semana você sai de casa?</div>
+                <div class="answer">
+                    <div class="radio">
+                        <input type="radio" id="r1" formControlName="qtd_sai_casa" value="0.5">
+                        <label for="r1">1 - 2 Vezes</label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" id="r2" formControlName="qtd_sai_casa" value="0.7">
+                        <label for="r2">3 - 5 Vezes</label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" id="r3" formControlName="qtd_sai_casa" value="1">
+                        <label for="r3">Mais de 5 vezes</label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" id="r4" formControlName="qtd_sai_casa" value="0">
+                        <label for="r4">Nenhuma</label>
+                    </div>
+                </div>
+            </div>
+            <div class="campo">
+                <div class="question">Você teve contato com alguma pessoa infectada nos últimos 14 dias?</div>
+                <div class="answer">
+                    <div class="radio">
+                        <input type="radio" id="contato1" checked formControlName="contato" value="0">
+                        <label for="contato1">Não</label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" id="contato2" formControlName="contato" value="2">
+                        <label for="contato2">Sim</label>
+                    </div>
+                </div>
+            </div>
+            <div class="campo">
+                <div class="question">Você frequentou alguma dessas áreas de risco?</div>
+                <div class="answer">
+                    <div class="radio">
+                        <input type="radio" id="area-risco1" checked formControlName="risco" value="1">
+                        <label for="area-risco1">Áreas com aglomerações</label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" id="area-risco2" formControlName="risco" value="0.7">
+                        <label for="area-risco2">Hospitais</label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" id="area-risco2" formControlName="risco" value="0">
+                        <label for="area-risco2">Nehuma</label>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="acoes">
+        <div>
+            <button type="button" (click)="Submit()" [disabled]="!form.valid">Entrar no site</button>
+        </div>
+        <a>Entrar sem informar meus dados</a>
+    </div>
+</div>
