@@ -55,7 +55,7 @@ export class InitialFormComponent implements OnInit {
       console.log(res)
       alert('Parabéns, a próxima tela é só amanhã.')
     }, err => {
-      alert('Deu erro Kris...')
+      alert('Deu erro Kris... API lixo')
       console.log(err)
     })
   }
