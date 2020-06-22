@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { InitialFormComponent } from './pages/initial-form/initial-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { InicioComponent } from './pages/inicio/inicio.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InitialFormComponent
+    InitialFormComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
