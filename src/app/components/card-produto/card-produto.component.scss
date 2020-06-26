@@ -1,0 +1,42 @@
+.card-produto {
+    width: fit-content;
+    padding: 0 20px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border-radius: 5px;
+
+    .img {
+        margin-bottom: 10px;
+
+        img {
+            width: 100px;
+        }
+    }
+
+    .nome {
+        font-size: 12px;
+        line-height: 16px;
+        height: 32px;
+        overflow: hidden;
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    }
+
+    .preco {
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .loja {
+        padding-bottom: 10px;
+
+        img {
+            width: 80px;
+        }
+    }
+}

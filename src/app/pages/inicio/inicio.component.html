@@ -1,5 +1,88 @@
 <div class="home">
-    <div class="side">a</div>
+    <div class="side overflow">
+        <div class="padding">
+            <div class="contexto">
+                <div class="main">Suprimentos para a pandemia</div>
+                <div class="second">Caso seus suprimentos tenham acabado dê uma olhada nestas lojas.</div>
+            </div>
+            <div class="carrousel">
+              <swiper fxFlex="auto" [config]="config">
+                  <div *ngFor="let p of produtos; let index = index" class="swiper-slide cursor-pointer">
+                    <card-produto [product]="p"></card-produto>
+                  </div>
+              </swiper>
+            </div>
+        </div>
+        <div style="background-color: #432e77;">
+            <div style="padding: 0 20px;">
+                <div class="contexto">
+                    <div class="main">Como se prevenir</div>
+                    <div class="second">De uma olhada no nosso FAQ sobre o Covid-19.</div>
+                </div>
+            </div>
+            <div class="faq-wrapper">
+                <ul>
+                    <li>
+                        <div class="pergunta">1 - O que é o coronavírus?</div>
+                        <div class="resposta">
+                            Os coronavírus pertencem a uma grande família de vírus que causam infecções respiratórias que podem variar de um resfriado comum a doenças mais graves como a Síndrome Respiratória do Oriente Médio (MERS) e a Síndrome Respiratória Aguda Grave (SARS). O coronavírus descoberto mais recentemente causa a COVID-19.
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pergunta">2 -  Como ocorreram as primeiras infecções humanas pelo novo coronavírus?</div>
+                        <div class="resposta">
+                            Em 31 de dezembro de 2019 o escritório da Organização Mundial da Saúde (OMS) foi informado sobre casos de pneumonia de origem desconhecida detectados na cidade de Wuhan, localizada na província de Hubei, na parte central da China, cuja população estimada é de 11 milhões de habitantes.
+                                As autoridades chinesas informaram à OMS que alguns pacientes trabalhavam em um mercado atacadista de peixes e animais vivos, localizado em Wuhan, denominado Huanan Seafood Market, maior mercado da cidade com 600 estabelecimentos e 1.500 trabalhadores. Esse mercado foi fechado em 1 de janeiro de 2020 para ações de saneamento e desinfecção ambiental.
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pergunta">3 -  Qual a diferença entre COVID-19 e o novo coronavírus?</div>
+                        <div class="resposta">
+                            COVID-19 é a doença infecciosa causada pelo novo coronavírus (SARS-COV-2), agente causador da doença.
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pergunta">4 – Qual a probabilidade de eu pegar a COVID-19?</div>
+                        <div class="resposta">
+                            O risco imediato de ser exposto ao novo coronavírus ainda é baixo para a maioria das pessoas, mas à medida que o surto se expande, esse risco aumenta. Casos de COVID-19 e casos de transmissão comunitária estão sendo relatados em um número crescente de estados.
+                            Caso você seja profissional de saúde que cuide de pacientes com COVID-19, ou tenha contato íntimo com pessoas com COVID-19, ou viaje para países onde haja transmissão comunitária, o risco de contágio é elevado.
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pergunta">5 – Quem está mais vulnerável à COVID-19?</div>
+                        <div class="resposta">
+                            Pessoas idosas e pessoas com condições médicas pré-existentes (como pressão alta, doenças cardíacas, doenças pulmonares, câncer ou diabetes) estão mais suscetíveis a desenvolver casos mais severos de COVID-19.
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pergunta">6 - O COVID-19 é transmitido pelo no ar?</div>
+                        <div class="resposta">
+                            Não, a transmissão acontece de uma pessoa doente para outra ou por contato próximo, por meio de:
+                            Aperto de mãos (principal forma de contágio)
+                            Gotículas de saliva
+                            Espirro
+                            Tosse
+                            Catarro
+                            Objetos ou superfícies contaminadas, como celulares, mesas, maçanetas, brinquedos, teclados de computador etc.
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pergunta">7 - Quanto tempo o vírus sobrevive nas superfícies?</div>
+                        <div class="resposta">
+                            Não é certo quanto tempo o vírus que causa o COVID-19 sobrevive na superfície. Estudos sugerem que os coronavírus podem persistir nas superfícies por algumas horas ou até vários dias. Isso pode variar sob diferentes condições (por exemplo: tipo de superfície, temperatura ou umidade do ambiente).
+                            Se você acha que uma superfície pode estar infectada, limpe-a com um desinfetante simples para matar o vírus e proteger a si e aos outros. Limpe as mãos com álcool gel a 70% ou lave-as com água e sabão. Evite tocar nos olhos, boca ou nariz.
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pergunta">8 - Devo usar uma máscara para me proteger?</div>
+                        <div class="resposta">
+                            Dados científicos recentes constatam que a transmissão da COVID-19 pode ocorrer mesmo antes do indivíduo apresentar os primeiros sinais e sintomas. Por esse motivo, o Ministério da Saúde passou a recomendar o uso de máscaras faciais para todos. A utilização de máscaras impede a disseminação de gotículas expelidas do nariz ou da boca do usuário no ambiente, garantindo uma barreira física que vem auxiliando na mudança de comportamento da população e diminuição de casos.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <div class="side">
         <div id="mapElement"  style="width:100%;height:100%"></div>
     </div>

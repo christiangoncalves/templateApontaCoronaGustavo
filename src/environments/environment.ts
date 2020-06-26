@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url: "localhost:3333"
+  url: "http://christianpcdatabase.ddns.net:3333"
 };
 
 /*

@@ -1,0 +1,16 @@
+<div class="card-produto">
+    <div class="img">
+        <img [src]="product.imgPathProduct" alt="">
+    </div>
+    <div class="nome">
+        <a target="_blank" href="{{product.linkStore}}">
+            {{product.name}}
+        </a>
+    </div>
+    <div class="preco">
+        R$ {{product.price.toLocaleString('pt-BR')}}
+    </div>
+    <div class="loja">
+        <img [src]="product.imgPathstore" alt="">
+    </div>
+</div>

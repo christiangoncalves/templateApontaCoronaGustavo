@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder} from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { UsuarioService } from 'src/app/services/usuario/usuario.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-initial-form',
@@ -15,7 +17,9 @@ export class InitialFormComponent implements OnInit {
   constructor
   (
     private _fb: FormBuilder,
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private usuario: UsuarioService,
+    private router: Router
   ) 
   { 
     this.form = _fb.group({
@@ -30,33 +34,44 @@ export class InitialFormComponent implements OnInit {
     
   }
 
-  Submit() {
-    let lat = 0, long = 0, weight = 0
-    let formVal = this.form.value
+  EntrarSemDados() {
+    this.router.navigate(['home'])
+  }
 
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(position => {
-        lat = position.coords.latitude
-        long = position.coords.longitude    
-      })
-    }
+  async Submit() {
+    let weight = 0
+    let formVal = this.form.value
 
     weight += 
       parseFloat(formVal.infectado) + 
       parseFloat(formVal.qtd_sai_casa) + 
       parseFloat(formVal.contato) + 
       parseFloat(formVal.risco)
-    
-    this.httpClient.post(`${environment.url}/users`, {
-      lat: lat,
-      long: long,
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(async position => {
+        
+        await this.PostUser(position.coords, weight).subscribe()
+
+        this.usuario.setUsuario({
+          lat: position.coords.latitude,
+          long: position.coords.longitude,
+          weight: weight
+        })
+        
+        this.router.navigate(['home'])
+      })
+    }
+    else {
+      alert('Não conseguimos encontrar seu local.')
+    }
+  }
+
+  PostUser(cords, weight) {
+    return this.httpClient.post(`${environment.url}/users`, {
+      lat: cords.latitude,
+      long: cords.longitude,
       weight: weight
-    }).subscribe(res => {
-      console.log(res)
-      alert('Parabéns, a próxima tela é só amanhã.')
-    }, err => {
-      alert('Deu erro Kris... API lixo')
-      console.log(err)
     })
   }
 }

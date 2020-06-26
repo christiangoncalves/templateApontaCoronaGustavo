@@ -8,5 +8,60 @@
         width: 50%;
         height: 100%;
         float: left;
+
+        &.overflow {
+            overflow: auto;
+        }
+
+        .padding {
+            padding: 20px;
+        }
+
+        .contexto {
+            .main {
+                font-size: 30px;
+                font-weight: 600;
+                // margin-bottom: 5px;
+            }
+
+            .second {
+                font-size: 13px;
+            }
+        }
+
+        .carrousel {
+            padding: 15px 0;
+            width: 100%;
+
+            .swiper-container {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .faq-wrapper {
+            ul {
+                margin: 0;
+                padding: 0;
+
+                li {
+                    padding: 15px;
+
+                    .pergunta {
+                        font-size: 15px;
+                        font-weight: 500;
+                        margin-bottom: 15px;
+                    }
+    
+                    .resposta {
+                        font-size: 15px;
+                    }
+
+                    &:nth-child(even) {
+                        background-color: #210F4D;
+                    }
+                }
+            }
+        }
     }
 }
